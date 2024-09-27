@@ -1,0 +1,156 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\personal> ssh LynnAmobi@20.74.80.104
+LynnAmobi@20.74.80.104's password:
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-1015-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Fri Sep 27 12:08:57 UTC 2024
+
+  System load:  0.0               Processes:             132
+  Usage of /:   8.4% of 28.02GB   Users logged in:       0
+  Memory usage: 9%                IPv4 address for eth0: 10.1.0.4
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+9 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Wed Sep 25 13:26:19 2024 from 102.88.69.66
+LynnAmobi@linuxlynn:~$ sudo su
+root@linuxlynn:/home/LynnAmobi# mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.39-0ubuntu0.24.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use lindaamobi
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++----------------------+
+| Tables_in_lindaamobi |
++----------------------+
+| linda_cars           |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> lynn_project
+    -> lynn_project;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'lynn_project
+lynn_project' at line 1
+mysql> create table lynn_project (
+    ->     addrid INT NOT NULL
+    ->     ,userid INT NOT NULL
+    ->     ,name VARCHAR(50)
+    ->     ,contactPhoneNumber VARCHAR(20)
+    ->     ,province VARCHAR(100)
+    ->     ,city VARCHAR(100)
+    ->     ,streetaddr VARCHAR(100)
+    ->     ,postCode VARCHAR(12)
+    ->     ,PRIMARY KEY(addrid)
+    ->     ,FOREIGN KEY(userid) REFERENCES Users(userid)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 11
+mysql> create table lynn_project (ADDRID INT, USERID INT, NAME VARCHAR(50), CONTACT VARCHAR (50), PROVINCE VARCHAR(50), CITY VARCHAR
+(100), STREETADRR VARCHAR(100), POSTCODE VARCHAR(15));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into lynn_project (ADDRID, USERID, NAME, CONTACT, PROVINCE, CITY, STREETADRR, POSTCODE)
+    -> values(1,28,"Haviva F. Davidson",915-791-0670,"Ontario","Ottawa-Carleton","8484 Nonummy Av.","N0C 7E0"), (2,21,"Rae R. Lara",
+495-472-7273,"Ontario","St. Catharines","5836 Iaculis Avenue","L7M 2V6"), (3,36,"Ashely O. Knowles",895-493-8279,"British Columbia",
+"Hudson's Hope","P.O. Box 827, 1825 Fusce Ave","V7A 5A6"), (4,11,"Hollee G. Hudson",516-753-9880,"Quebec","Baie-Comeau","9376 Imperd
+iet Street","G4J 8Y2"), (5,39,"Kylynn G. Waller","838-912-3476,"Quebec","Neuville","Ap #179-5810 Nunc Rd.","G9K 8Y6");
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Quebec","Neuville","Ap' at line 2
+mysql> insert into lynn_project (ADDRID, USERID, NAME, CONTACT, PROVINCE, CITY, STREETADRR, POSTCODE) values(1,28,"Haviva F. Davidson",915-791-0670,"Ontario","Ottawa-Carleton","8484 Nonummy Av.","N0C 7E0"),(2,21,"Rae R. Lara",495-472-7273,"Ontario","St. Catharines","5836 Iaculis Avenue","L7M 2V6"), (3,36,"Ashely O. Knowles",895-493-8279,"British Columbia","Hudson's Hope","P.O. Box 827, 1825 Fusce Ave","V7A 5A6"), (4,11,"Hollee G. Hudson",516-753-9880,"Quebec","Baie-Comeau","9376 Imperdiet Street","G4J 8Y2"), (5,39,"Kylynn G. Waller","838-912-3476,"Quebec","Neuville","Ap #179-5810 Nunc Rd.","G9K 8Y6");
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Quebec","Neuville","Ap' at line 1
+mysql> insert into lynn_project (ADDRID, USERID, NAME, CONTACT, PROVINCE, CITY, STREETADRR, POSTCODE) values(1,28,"Haviva F. Davidson","915-791-0670","Ontario","Ottawa-Carleton","8484 Nonummy Av.","N0C 7E0"),(2,21,"Rae R. Lara","495-472-7273","Ontario","St. Catharin
+es","5836 Iaculis Avenue","L7M 2V6"), (3,36,"Ashely O. Knowles","895-493-8279","British Columbia","Hudson's Hope","P.O. Box 827, 1825
+ Fusce Ave","V7A 5A6"), (4,11,"Hollee G. Hudson","516-753-9880","Quebec","Baie-Comeau","9376 Imperdiet Street","G4J 8Y2"), (5,39,"Kylynn G. Waller","838-912-3476","Quebec","Neuville","Ap #179-5810 Nunc Rd.","G9K 8Y6");
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from lynn_project;
++--------+--------+--------------------+--------------+------------------+-----------------+------------------------------+----------+
+| ADDRID | USERID | NAME               | CONTACT      | PROVINCE         | CITY            | STREETADRR                   | POSTCODE |
++--------+--------+--------------------+--------------+------------------+-----------------+------------------------------+----------+
+|      1 |     28 | Haviva F. Davidson | 915-791-0670 | Ontario          | Ottawa-Carleton | 8484 Nonummy Av.             | N0C 7E0  |
+|      2 |     21 | Rae R. Lara        | 495-472-7273 | Ontario          | St. Catharines  | 5836 Iaculis Avenue          | L7M 2V6  |
+|      3 |     36 | Ashely O. Knowles  | 895-493-8279 | British Columbia | Hudson's Hope   | P.O. Box 827, 1825 Fusce Ave | V7A 5A6  |
+|      4 |     11 | Hollee G. Hudson   | 516-753-9880 | Quebec           | Baie-Comeau     | 9376 Imperdiet Street        | G4J 8Y2  |
+|      5 |     39 | Kylynn G. Waller   | 838-912-3476 | Quebec           | Neuville        | Ap #179-5810 Nunc Rd.        | G9K 8Y6  |
++--------+--------+--------------------+--------------+------------------+-----------------+------------------------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> insert into lynn_project (ADDRID, USERID, NAME, CONTACT, PROVINCE, CITY, STREETADRR, POSTCODE) values (6,38,'Audra Manning','898-140-2501','Manitoba','Daly','732-9599 Lacinia Rd.','R1X 3Z2');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from lynn_project;
++--------+--------+--------------------+--------------+------------------+-----------------+------------------------------+----------+
+| ADDRID | USERID | NAME               | CONTACT      | PROVINCE         | CITY            | STREETADRR                   | POSTCODE |
++--------+--------+--------------------+--------------+------------------+-----------------+------------------------------+----------+
+|      1 |     28 | Haviva F. Davidson | 915-791-0670 | Ontario          | Ottawa-Carleton | 8484 Nonummy Av.             | N0C 7E0  |
+|      2 |     21 | Rae R. Lara        | 495-472-7273 | Ontario          | St. Catharines  | 5836 Iaculis Avenue          | L7M 2V6  |
+|      3 |     36 | Ashely O. Knowles  | 895-493-8279 | British Columbia | Hudson's Hope   | P.O. Box 827, 1825 Fusce Ave | V7A 5A6  |
+|      4 |     11 | Hollee G. Hudson   | 516-753-9880 | Quebec           | Baie-Comeau     | 9376 Imperdiet Street        | G4J 8Y2  |
+|      5 |     39 | Kylynn G. Waller   | 838-912-3476 | Quebec           | Neuville        | Ap #179-5810 Nunc Rd.        | G9K 8Y6  |
+|      6 |     38 | Audra Manning      | 898-140-2501 | Manitoba         | Daly            | 732-9599 Lacinia Rd.         | R1X 3Z2  |
++--------+--------+--------------------+--------------+------------------+-----------------+------------------------------+----------+
+6 rows in set (0.00 sec)
+
+mysql> insert into lynn_project (ADDRID, USERID, NAME, CONTACT, PROVINCE, CITY, STREETADRR, POSTCODE) values(7,9,'Zia Guzman','781-454-1244','Ontario','Cornwall','Ap #553-1602 Sit Av.','M4G 2Y2'), (8,12,'Xerxes Luna','841-769-6638','Quebec','Verdun','P.O. Box 210, 6443 Donec Road','G5L 7P4'), (9,25,'Azalia P. Hooper','116-526-3919','Quebec','Lachine','Ap #379-4986 Odio. Rd.','H3P 9J4'), (10,32,'Dahlia Rojas','916-981-2927','Ontario','Vaughan','Ap #642-6556 Adipiscing St.','L4T 4A3'), (11,11,'Melanie Duran','440-799-4382','Ontario','Tay','565-8573 Et Road','M0K 5N9'), (12,19,'Nyssa S. Maynard','861-136-6572','Prince Edward Island','Montague','P.O. Box 794, 5616 Gravida Rd.','C5Z 2Z0'), (13,38,'Hilary I. Boone','618-129-6884','British Columbia','Sooke','P.O. Box 594, 5086 At Avenue','V9W 0S9'), (14,17,'Aileen B. Pratt','785-162-9219','Quebec','Montreal','654-6775 Primis Av.','G7H 5E9'), (15,14,'Rudyard O. Kent','896-514-6693','Alberta','Wood Buffalo','271-2092 Enim. Av.','T6E 3R8');
+Query OK, 9 rows affected (0.01 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> select * from lynn_projects;
+ERROR 1146 (42S02): Table 'lindaamobi.lynn_projects' doesn't exist
+mysql>  select * from lynn_project;
++--------+--------+--------------------+--------------+----------------------+-----------------+--------------------------------+----------+
+| ADDRID | USERID | NAME               | CONTACT      | PROVINCE             | CITY            | STREETADRR                     | POSTCODE |
++--------+--------+--------------------+--------------+----------------------+-----------------+--------------------------------+----------+
+|      1 |     28 | Haviva F. Davidson | 915-791-0670 | Ontario              | Ottawa-Carleton | 8484 Nonummy Av.               | N0C 7E0  |
+|      2 |     21 | Rae R. Lara        | 495-472-7273 | Ontario              | St. Catharines  | 5836 Iaculis Avenue            | L7M 2V6  |
+|      3 |     36 | Ashely O. Knowles  | 895-493-8279 | British Columbia     | Hudson's Hope   | P.O. Box 827, 1825 Fusce Ave   | V7A 5A6  |
+|      4 |     11 | Hollee G. Hudson   | 516-753-9880 | Quebec               | Baie-Comeau     | 9376 Imperdiet Street          | G4J 8Y2  |
+|      5 |     39 | Kylynn G. Waller   | 838-912-3476 | Quebec               | Neuville        | Ap #179-5810 Nunc Rd.          | G9K 8Y6  |
+|      6 |     38 | Audra Manning      | 898-140-2501 | Manitoba             | Daly            | 732-9599 Lacinia Rd.           | R1X 3Z2  |
+|      7 |      9 | Zia Guzman         | 781-454-1244 | Ontario              | Cornwall        | Ap #553-1602 Sit Av.           | M4G 2Y2  |
+|      8 |     12 | Xerxes Luna        | 841-769-6638 | Quebec               | Verdun          | P.O. Box 210, 6443 Donec Road  | G5L 7P4  |
+|      9 |     25 | Azalia P. Hooper   | 116-526-3919 | Quebec               | Lachine         | Ap #379-4986 Odio. Rd.         | H3P 9J4  |
+|     10 |     32 | Dahlia Rojas       | 916-981-2927 | Ontario              | Vaughan         | Ap #642-6556 Adipiscing St.    | L4T 4A3  |
+|     11 |     11 | Melanie Duran      | 440-799-4382 | Ontario              | Tay             | 565-8573 Et Road               | M0K 5N9  |
+|     12 |     19 | Nyssa S. Maynard   | 861-136-6572 | Prince Edward Island | Montague        | P.O. Box 794, 5616 Gravida Rd. | C5Z 2Z0  |
+|     13 |     38 | Hilary I. Boone    | 618-129-6884 | British Columbia     | Sooke           | P.O. Box 594, 5086 At Avenue   | V9W 0S9  |
+|     14 |     17 | Aileen B. Pratt    | 785-162-9219 | Quebec               | Montreal        | 654-6775 Primis Av.            | G7H 5E9  |
+|     15 |     14 | Rudyard O. Kent    | 896-514-6693 | Alberta              | Wood Buffalo    | 271-2092 Enim. Av.             | T6E 3R8  |
++--------+--------+--------------------+--------------+----------------------+-----------------+--------------------------------+----------+
+15 rows in set (0.00 sec)
+
+mysql>
